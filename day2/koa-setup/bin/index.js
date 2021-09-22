@@ -6,6 +6,7 @@ import { createIndexTemplate } from "./indexTemplate.js"
 import { createPackageTemplate } from "./packageTemplate.js"
 import { question } from "./question/index.js"
 import execa from 'execa'
+import path from 'path'
 
 //nodeJS支持顶层await
 const answer = await question()
@@ -25,5 +26,5 @@ execa('yarn',{
 
 
 function getRootPath() {
-  return './haha'
+  return path.resolve(process.cwd(),config.packageName)
 }
